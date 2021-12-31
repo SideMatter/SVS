@@ -115,12 +115,13 @@ export class AppGuide {
 
               </ion-card-content>
               </ion-card>
+              </ion-content>
               <ion-footer>
-                <ion-button href="/" expand="block">
+                <ion-button href="/" expand="full">
                   Back to Home
                   </ion-button>
               </ion-footer>
-      </ion-content>
+   
       
       </Host>
     );

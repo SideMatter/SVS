@@ -71,7 +71,7 @@ export class AppHome {
   </ion-segment-button>
 </ion-segment>
 
-<ion-seachbar placeholder="Skindex Search"></ion-seachbar>
+<ion-seachbar></ion-seachbar>
 
        <ion-card>
   <ion-card-header>
