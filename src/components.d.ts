@@ -6,12 +6,20 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppGuide {
+    }
     interface AppHome {
     }
     interface AppRoot {
     }
 }
 declare global {
+    interface HTMLAppGuideElement extends Components.AppGuide, HTMLStencilElement {
+    }
+    var HTMLAppGuideElement: {
+        prototype: HTMLAppGuideElement;
+        new (): HTMLAppGuideElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
@@ -25,16 +33,20 @@ declare global {
         new (): HTMLAppRootElement;
     };
     interface HTMLElementTagNameMap {
+        "app-guide": HTMLAppGuideElement;
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppGuide {
+    }
     interface AppHome {
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
+        "app-guide": AppGuide;
         "app-home": AppHome;
         "app-root": AppRoot;
     }
@@ -43,6 +55,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-guide": LocalJSX.AppGuide & JSXBase.HTMLAttributes<HTMLAppGuideElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }

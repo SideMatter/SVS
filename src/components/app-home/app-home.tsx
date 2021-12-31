@@ -1,10 +1,46 @@
 import { Component, h } from '@stencil/core';
 
-async function presentToast() {
+async function toastVerifed() {
   const toast = document.createElement('ion-toast');
-  toast.message = 'This guide has been created by Tony Stark.';
+  toast.message = 'This guide is the recommended way to skin this device and has been created by Tony Stark himself';
   toast.duration = 2000;
   toast.color = 'success';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+async function toastCert() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'This guide is the reccomended way to skin this device at this time';
+  toast.duration = 2000;
+  toast.color = 'warning';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+async function toastTools() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'The tools score is the level of tools required to skin this device successfully, the higher the score the more tools are required';
+  toast.duration = 2000;
+  toast.color = 'tertiary';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+async function toastDiff() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'The difficulty score is how hard the application process is. The higher the score the harder the process';
+  toast.duration = 2000;
+  toast.color = 'tertiary';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+async function toastMat() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'The material score is the amount of required material to skin the device successfully, the higher the score the more material is required';
+  toast.duration = 2000;
+  toast.color = 'tertiary';
 
   document.body.appendChild(toast);
   return toast.present();
@@ -20,7 +56,7 @@ export class AppHome {
   render() {
     return [
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar color="warning">
           <ion-title>Home</ion-title>
         </ion-toolbar>
       </ion-header>,
@@ -34,6 +70,9 @@ export class AppHome {
     <ion-label>Community</ion-label>
   </ion-segment-button>
 </ion-segment>
+
+<ion-seachbar placeholder="Skindex Search"></ion-seachbar>
+
        <ion-card>
   <ion-card-header>
     <ion-card-subtitle>SideMatter</ion-card-subtitle>
@@ -42,26 +81,31 @@ export class AppHome {
 
   <ion-card-content>
   <ion-chip
-  onClick={() => presentToast()} color="success">
+  onClick={() => toastVerifed()} color="success">
   <ion-icon name="shield-checkmark-outline"></ion-icon>
   <ion-label>Verified</ion-label>
 </ion-chip>
 <br></br>
    Skinning a ridge wallet blah blah blah dsnfjwsnfaslknfewj
    <br></br>
-   <ion-chip color="primary">
+   <ion-chip color="primary" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
    <ion-label>Tools: 1</ion-label>
   </ion-chip>
-  <ion-chip color="primary">
+  <ion-chip color="primary" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>
    <ion-label>Difficulty: 1</ion-label>
   </ion-chip>
-  <ion-chip color="primary">
+  <ion-chip color="primary" onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 1</ion-label>
   </ion-chip>
+  <br></br>
+  <ion-button color="warning" href="/guide" expand="full" >View Guide</ion-button>
   </ion-card-content>
+
+  
+
 </ion-card>
 <ion-card>
   <ion-card-header>
@@ -70,20 +114,30 @@ export class AppHome {
   </ion-card-header>
 
   <ion-card-content>
+  <ion-chip
+  onClick={() => toastCert()} color="warning">
+  <ion-icon name="shield-checkmark-outline"></ion-icon>
+  <ion-label>Certified</ion-label>
+</ion-chip>
+<br></br>
    Skinning a key fob is a bit harder
-  </ion-card-content>
- <ion-chip color="primary">
+   <br></br>
+   <ion-chip color="primary" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
    <ion-label>Tools: 1</ion-label>
   </ion-chip>
-  <ion-chip color="primary">
+  <ion-chip color="primary" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>
    <ion-label>Difficulty: 2</ion-label>
   </ion-chip>
-  <ion-chip color="primary">
+  <ion-chip color="primary" onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 1</ion-label>
   </ion-chip>
+  <br></br>
+  <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
+  </ion-card-content>
+  
 </ion-card>
 
 
@@ -95,19 +149,23 @@ export class AppHome {
 
   <ion-card-content>
    Skining a child is very hard, as childs are not robots and have fleshy oily skin
-  </ion-card-content>
- <ion-chip color="primary">
+  <br></br>
+  <ion-chip color="warning" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: 1</ion-label>
+   <ion-label>Tools: 3</ion-label>
   </ion-chip>
-  <ion-chip color="warning">
+  <ion-chip color="danger" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>
-   <ion-label>Difficulty: 3</ion-label>
+   <ion-label>Difficulty: 5</ion-label>
   </ion-chip>
-  <ion-chip color="danger">
+  <ion-chip color="danger" onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 5+</ion-label>
   </ion-chip>
+
+  </ion-card-content>
+   <br></br>
+  <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
 </ion-card>
       </ion-content>,
     ];
