@@ -95,29 +95,15 @@ export class AppGuide {
 
   <hr></hr>
   Skinning a Ridge wallet is a fairly straightforwards process. As it is basically a metal rectangle, the process is very simple.
-  <ion-list>
-    <ion-item>
-    <ion-label>1. Prepare the wallet</ion-label>
-    </ion-item>
-    <ion-label>Prepare the wallet for skinning. Wipe it down with a microfiber cleaning cloth, included in your dbrand order.</ion-label>
-  
-   <ion-item>
-    <ion-label>2. Cut out a portion of the desired skin</ion-label>
-    </ion-item>
-Place the item on the back of the 3m Paper. Draw a line, about one inch around the sides, then cut with either a pair of scisors or an xacto knife.
-<ion-item>
-    <ion-label>3. Place the front of the wallet face down on the exposed skin</ion-label>
-</ion-item>
-Peel off the back of the 3M paper and place the wallet face down on the exposed skin.
-<ion-item>
-    <ion-label>4. Trim the edges</ion-label>
-</ion-item>
-Using a <strong>sharp</strong> xacto knife, trim around the edges of the wallet, being careful to not remove skin under the face of the wallet.
-<ion-item>
-    <ion-label>5. Clean up the edges</ion-label>
-</ion-item>
-After step 4, pick up your wallet, and either trim up the edges if theres excess, or wipe the edges 10-15 times with a microfiber cleaning cloth.
-  </ion-list>
+<ol>
+   <li>Prepare the wallet for skinning. Wipe it down with a microfiber cleaning cloth, included in your dbrand order.</li>   
+<li>Place the item on the back of the 3m Paper. Draw a line, about one inch around the sides, then cut with either a pair of scisors or an xacto knife.</li>
+<li>Peel off the back of the 3M paper and place the wallet face down on the exposed skin.</li>
+
+<li> Using a <strong>sharp</strong> xacto knife, trim around the edges of the wallet, being careful to not remove skin under the face of the wallet.</li>
+
+<li>After step 4, pick up your wallet, and either trim up the edges if theres excess, or wipe the edges 10-15 times with a microfiber cleaning cloth.</li>
+</ol>
   <hr></hr>
   {/* <ion-list>
     <ion-item>
