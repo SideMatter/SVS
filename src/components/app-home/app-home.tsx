@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 async function toastVerifed() {
   const toast = document.createElement('ion-toast');
   toast.message = 'This guide is the recommended way to skin this device and has been created by Tony Stark himself';
-  toast.duration = 2000;
+  toast.duration = 4000;
   toast.color = 'success';
 
   document.body.appendChild(toast);
@@ -12,7 +12,7 @@ async function toastVerifed() {
 async function toastCert() {
   const toast = document.createElement('ion-toast');
   toast.message = 'This guide is the reccomended way to skin this device at this time';
-  toast.duration = 2000;
+  toast.duration = 4000;
   toast.color = 'warning';
 
   document.body.appendChild(toast);
@@ -21,7 +21,7 @@ async function toastCert() {
 async function toastTools() {
   const toast = document.createElement('ion-toast');
   toast.message = 'The tools score is the level of tools required to skin this device successfully, the higher the score the more tools are required';
-  toast.duration = 2000;
+  toast.duration = 4000;
   toast.color = 'tertiary';
 
   document.body.appendChild(toast);
@@ -30,7 +30,7 @@ async function toastTools() {
 async function toastDiff() {
   const toast = document.createElement('ion-toast');
   toast.message = 'The difficulty score is how hard the application process is. The higher the score the harder the process';
-  toast.duration = 2000;
+  toast.duration = 3000;
   toast.color = 'tertiary';
 
   document.body.appendChild(toast);
@@ -39,12 +39,22 @@ async function toastDiff() {
 async function toastMat() {
   const toast = document.createElement('ion-toast');
   toast.message = 'The material score is the amount of required material to skin the device successfully, the higher the score the more material is required';
+  toast.duration = 4000;
+  toast.color = 'tertiary';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+async function toastTime() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'The estimated time to skin the device successfully';
   toast.duration = 2000;
   toast.color = 'tertiary';
 
   document.body.appendChild(toast);
   return toast.present();
 }
+
 
 @Component({
   tag: 'app-home',
@@ -53,6 +63,7 @@ async function toastMat() {
 
 
 export class AppHome {
+  
   render() {
     return [
       <ion-header>
@@ -62,6 +73,7 @@ export class AppHome {
       </ion-header>,
 
       <ion-content class="ion-padding">
+        <ion-searchbar></ion-searchbar>
         <ion-segment>
   <ion-segment-button>
     <ion-label>Certified</ion-label>
@@ -99,6 +111,10 @@ export class AppHome {
   <ion-chip color="primary" onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 1</ion-label>
+  </ion-chip>
+  <ion-chip color="primary" onClick={() => toastTime()}>
+ <ion-icon name="timer-outline"></ion-icon>
+   <ion-label>Time Required: 30 Mins</ion-label>
   </ion-chip>
   <br></br>
   <ion-button color="warning" href="/guide" expand="full" >View Guide</ion-button>
@@ -161,11 +177,12 @@ export class AppHome {
   <ion-chip color="danger" onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 5+</ion-label>
-  </ion-chip>
 
+  </ion-chip>
+  <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
   </ion-card-content>
    <br></br>
-  <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
+
 </ion-card>
       </ion-content>,
     ];

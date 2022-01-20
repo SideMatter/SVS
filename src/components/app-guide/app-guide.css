@@ -154,3 +154,22 @@ ion-chip{
   --ion-background-color: #1e1e1e;
   --ion-background-color-rgb: 18, 18, 18;
 }
+
+
+/* .guide {
+
+ width: 458px;
+ height: 250px;
+ display: inline-block
+} */
+@media only screen and (min-width: 600px) {
+  .guide {
+
+    width: 458px;
+    height: 250px;
+    display: inline-block
+   }
+} 
+@media only screen and (max-width: 601px) {
+  
+}
