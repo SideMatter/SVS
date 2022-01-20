@@ -107,7 +107,7 @@ export class AppGuide {
                 <ion-card-title>Prepare the wallet for skinning.</ion-card-title>
               </ion-card-header>
               <ion-card-content>
-                <br></br>
+                <hr></hr>
                 Wipe it down with a microfiber cleaning cloth, included in your dbrand order.
               </ion-card-content>
             </ion-card>

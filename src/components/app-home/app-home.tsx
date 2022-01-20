@@ -67,7 +67,7 @@ export class AppHome {
   render() {
     return [
       <ion-header>
-        <ion-toolbar color="warning">
+        <ion-toolbar color="primary">
           <ion-title>Home</ion-title>
         </ion-toolbar>
       </ion-header>,
@@ -117,7 +117,7 @@ export class AppHome {
    <ion-label>Time Required: 30 Mins</ion-label>
   </ion-chip>
   <br></br>
-  <ion-button color="warning" href="/guide" expand="full" >View Guide</ion-button>
+  <ion-button color="primary" href="/guide" expand="full" >View Guide</ion-button>
   </ion-card-content>
 
   
