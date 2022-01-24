@@ -27,13 +27,21 @@ export class AppAuth {
 <ion-icon name="logo-discord"></ion-icon>
 Log In With Discord
 </ion-button>
+<ion-button class="apple" color="light" expand="block">
+<ion-icon name="logo-apple"></ion-icon>
+Sign In With Apple
+</ion-button>
 <ion-button class="google" expand="block">
 <ion-icon name="logo-google"></ion-icon>
 Sign In With Google
 </ion-button>
-<ion-button class="apple" color="light" expand="block">
-<ion-icon name="logo-apple"></ion-icon>
-Sign In With Apple
+<ion-button class="email" color="danger" expand="block">
+<ion-icon name="mail"></ion-icon>
+Sign In With Email
+</ion-button>
+<ion-button class="github" color="light" expand="block">
+<ion-icon name="logo-github"></ion-icon>
+Sign In With Github
 </ion-button>
 </ion-card>
 
