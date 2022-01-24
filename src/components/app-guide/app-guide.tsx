@@ -53,6 +53,24 @@ async function toastTime() {
   document.body.appendChild(toast);
   return toast.present();
 }
+async function toastLike() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'You found this guide helpful, thank you for your feedback';
+  toast.duration = 2000;
+  toast.color = 'success';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+async function toastDislike() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'You found this guide not helpful, thank you for your feedback';
+  toast.duration = 2000;
+  toast.color = 'danger';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
 
 @Component({
   tag: 'app-guide',
@@ -160,6 +178,17 @@ export class AppGuide {
                 <ion-card-content>
                   <br></br>
                   If you have any questions, you know how to reach us.
+                  <br></br>
+<ion-button color="success" expand="full" onClick={() => toastLike()}>
+<ion-icon name="thumbs-up-outline"></ion-icon>
+ Helpful
+</ion-button>
+                      
+                      <ion-button expand="full" color="danger" onClick={() => toastDislike()}>
+<ion-icon name="thumbs-down-outline"></ion-icon>
+ Not Helpful
+</ion-button>
+                     
                 </ion-card-content>
             </ion-card>
 

@@ -116,6 +116,7 @@ export class AppHome {
  <ion-icon name="timer-outline"></ion-icon>
    <ion-label>Time Required: 30 Mins</ion-label>
   </ion-chip>
+ 
   <br></br>
   <ion-button color="primary" href="/guide" expand="full" >View Guide</ion-button>
   </ion-card-content>
@@ -150,6 +151,10 @@ export class AppHome {
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 1</ion-label>
   </ion-chip>
+  <ion-chip color="primary" onClick={() => toastTime()}>
+ <ion-icon name="timer-outline"></ion-icon>
+   <ion-label>Time Required: 30 Mins</ion-label>
+  </ion-chip>
   <br></br>
   <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
   </ion-card-content>
@@ -178,6 +183,10 @@ export class AppHome {
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: 5+</ion-label>
 
+  </ion-chip>
+  <ion-chip color="danger" onClick={() => toastTime()}>
+ <ion-icon name="timer-outline"></ion-icon>
+   <ion-label>Time Required: Good freaking luck</ion-label>
   </ion-chip>
   <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
   </ion-card-content>
