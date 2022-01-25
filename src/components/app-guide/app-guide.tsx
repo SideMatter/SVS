@@ -83,7 +83,7 @@ export class AppGuide {
         <ion-content>
           <ion-card>
             <ion-card-header>
-              <ion-card-subtitle>Skin Guide</ion-card-subtitle>
+              <ion-card-subtitle>Skin Guides</ion-card-subtitle>
               <ion-card-title>How to skin a Ridge Wallet</ion-card-title>
             </ion-card-header>
             <ion-card-content>
