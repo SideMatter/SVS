@@ -127,6 +127,11 @@ export class AppGuide {
               <ion-card-content>
                 <hr></hr>
                 Wipe it down with a microfiber cleaning cloth, included in your dbrand order.
+               <hr></hr>
+                <ion-chip>
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                <ion-label>Verified</ion-label>
+              </ion-chip>
               </ion-card-content>
             </ion-card>
 
@@ -169,6 +174,7 @@ export class AppGuide {
               <ion-card-content>
                 <br></br>
                 After step 4, pick up your wallet, and either trim up the edges if theres excess, and wipe the edges 10-15 times with a microfiber cleaning cloth.
+              
               </ion-card-content>
             </ion-card>
             <ion-card>

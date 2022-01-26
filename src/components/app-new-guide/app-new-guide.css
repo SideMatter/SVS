@@ -154,25 +154,11 @@ ion-chip{
   --ion-background-color: #1e1e1e;
   --ion-background-color-rgb: 18, 18, 18;
 }
-
-
-/* .guide {
-
- width: 458px;
- height: 250px;
- display: inline-block
-} */
-@media only screen and (min-width: 600px) {
-  .guide {
-
-    max-width: 440px;
-    height: 250px;
-    display: inline-block;
-    margin: 15 auto;
-   }
-} 
-@media only screen and (max-width: 601px) {
-  .guide {
-    height: 250px;
-  }
+ion-textarea {
+  --ion-background-color: #4b4b4b;
+  --ion-background-color-rgb: 18, 18, 18;
+ 
+}
+#cardtitle {
+  
 }

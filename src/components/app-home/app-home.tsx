@@ -129,6 +129,7 @@ export class AppHome {
   
 
 </ion-card>
+
 <ion-card>
   <ion-card-header>
     <ion-card-subtitle>SideMatter</ion-card-subtitle>
@@ -198,6 +199,7 @@ export class AppHome {
    <br></br>
 
 </ion-card>
+
       </ion-content>,
     ];
   }
