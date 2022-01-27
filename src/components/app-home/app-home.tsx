@@ -103,7 +103,7 @@ export class AppHome {
   <ion-label>Verified</ion-label>
 </ion-chip>
 <br></br>
-   Skinning a ridge wallet is a fairly easy custom skin to complete as it basically a metal rectangle with a small indent at the bottom.
+   Skinning a ridge wallet is a fairly easy custom skin to complete as it's basically a metal rectangle with a small indent at the bottom.
    <br></br>
    <ion-chip color="primary" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
@@ -199,7 +199,11 @@ export class AppHome {
    <br></br>
 
 </ion-card>
-
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+<ion-fab-button href="/new-guide">
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+            </ion-fab>
       </ion-content>,
     ];
   }
