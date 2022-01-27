@@ -20,7 +20,7 @@ async function toastCert() {
 }
 async function toastTools() {
   const toast = document.createElement('ion-toast');
-  toast.message = 'The tools score is the level of tools required to skin this device successfully, the higher the score the more tools are required';
+  toast.message = 'The amount of tools required to skin this device successfully';
   toast.duration = 4000;
   toast.color = 'tertiary';
 
@@ -105,9 +105,9 @@ export class AppHome {
 <br></br>
    Skinning a ridge wallet is a fairly easy custom skin to complete as it's basically a metal rectangle with a small indent at the bottom.
    <br></br>
-   <ion-chip color="primary" onClick={() => toastTools()}>
+   <ion-chip color="success" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: 1</ion-label>
+   <ion-label>Tools: Normal</ion-label>
   </ion-chip>
   <ion-chip color="primary" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>
@@ -145,9 +145,9 @@ export class AppHome {
 <br></br>
    Skinning a key fob is a bit harder
    <br></br>
-   <ion-chip color="primary" onClick={() => toastTools()}>
+   <ion-chip color="warning" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: 1</ion-label>
+   <ion-label>Tools: Optional</ion-label>
   </ion-chip>
   <ion-chip color="primary" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>
@@ -177,9 +177,9 @@ export class AppHome {
   <ion-card-content>
    Skining a child is very hard, as childs are not robots and have fleshy oily skin
   <br></br>
-  <ion-chip color="warning" onClick={() => toastTools()}>
+  <ion-chip color="danger" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: 3</ion-label>
+   <ion-label>Tools: Additional</ion-label>
   </ion-chip>
   <ion-chip color="danger" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>

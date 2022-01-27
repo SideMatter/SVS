@@ -13,6 +13,21 @@ function submitGuide() {
   return toast.present();
 }
 
+async function addChip() {
+  const alert = document.createElement('ion-alert');
+  alert.cssClass = 'my-custom-class';
+  alert.header = 'Chips';
+  alert.subHeader = 'So about that chip...';
+  alert.message = 'Adding chips is not yet supported, it will be soon tho';
+  alert.buttons = ['OK'];
+
+  document.body.appendChild(alert);
+  await alert.present();
+
+  const { role } = await alert.onDidDismiss();
+  console.log('onDidDismiss resolved with role', role);
+}
+
  
 function addSteps() {
   const div = document.getElementById("addhere");
@@ -60,12 +75,10 @@ export class AppNewGuide {
             </ion-item>
             <ion-item>
               <ion-label>Tools Score</ion-label>
-              <ion-select placeholder="Lower is better">
-                <ion-select-option value="1">1</ion-select-option>
-                <ion-select-option value="2">2</ion-select-option>
-                <ion-select-option value="3">3</ion-select-option>
-                <ion-select-option value="4">4</ion-select-option>
-                <ion-select-option value="5">5</ion-select-option>
+              <ion-select placeholder="Does it require more then normal tools?">
+                <ion-select-option value="1">Normal</ion-select-option>
+                <ion-select-option value="2">Optional</ion-select-option>
+                <ion-select-option value="3">Additional</ion-select-option>
               </ion-select>
             </ion-item>
             <ion-item>
@@ -120,7 +133,7 @@ export class AppNewGuide {
 
             <ion-fab-list side="start">
               <ion-fab-button>
-                <ion-icon name="information-circle-outline"></ion-icon>
+                <ion-icon name="information-circle-outline" onClick={() => addChip()}></ion-icon>
               </ion-fab-button>
             </ion-fab-list>
           </ion-fab>
