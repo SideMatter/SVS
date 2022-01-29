@@ -74,6 +74,10 @@ export class AppNewGuide {
               <ion-input></ion-input>
             </ion-item>
             <ion-item>
+              <ion-label position="floating">Reccomended Kit</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
               <ion-label>Tools Score</ion-label>
               <ion-select placeholder="Does it require more then normal tools?">
                 <ion-select-option value="1">Normal</ion-select-option>
@@ -83,7 +87,7 @@ export class AppNewGuide {
             </ion-item>
             <ion-item>
               <ion-label>Difficulty Score</ion-label>
-              <ion-select placeholder="Lower is better">
+              <ion-select placeholder="Lower is easier">
                 <ion-select-option value="1">1</ion-select-option>
                 <ion-select-option value="2">2</ion-select-option>
                 <ion-select-option value="3">3</ion-select-option>

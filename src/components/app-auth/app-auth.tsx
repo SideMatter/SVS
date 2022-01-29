@@ -9,6 +9,11 @@ async function toastSignin() {
   document.body.appendChild(toast);
   return toast.present();
 }
+
+
+
+
+
 @Component({
   tag: 'app-auth',
   styleUrl: 'app-auth.css',
@@ -49,7 +54,7 @@ export class AppAuth {
             </ion-list>
           </ion-card>
           <section id="login">
-            <ion-button  class="discord" expand="block" onClick={() => toastSignin()}>
+            <ion-button  class="discord" expand="block" href="https://discord.com/api/oauth2/authorize?client_id=935755084959219722&redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fapi%2Fv1%2Fauth%2Fdiscord%2Fcallback%2F&response_type=code&scope=identify%20email" onClick={() => toastSignin()}>
               <ion-icon slot="start" name="logo-discord"></ion-icon>
              Sign In With Discord
             </ion-button>
@@ -73,7 +78,9 @@ export class AppAuth {
                 <ion-icon slot="start" name="mail"></ion-icon>
                 Sign In With Email
               </ion-button>
+            
           </section>
+         
         </ion-content>
         <ion-footer></ion-footer>
       </Host>
