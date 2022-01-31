@@ -1,9 +1,6 @@
 import { Component, Host, h } from '@stencil/core';
 
-
 function submitGuide() {
-  
-
   const toast = document.createElement('ion-toast');
   toast.message = 'Guide NOT created, SideMatter Hasnt coded submission yet';
   toast.duration = 2000;
@@ -28,21 +25,23 @@ async function addChip() {
   console.log('onDidDismiss resolved with role', role);
 }
 
- 
 function addSteps() {
-  const div = document.getElementById("addhere");
-  div.insertAdjacentHTML('beforeend', `<ion-card>
+  const div = document.getElementById('addhere');
+  div.insertAdjacentHTML(
+    'beforeend',
+    `
+  <ion-reorder>
+  <ion-card>
   <ion-card-header color="primary">
     <ion-input id="steptitle" placeholder="Title Goes Here"></ion-input>
     </ion-card-header>
     <ion-card-content>
     <ion-textarea id="stepcontent" placeholder="Step Content Goes Here"></ion-textarea>
     </ion-card-content>
-</ion-card>`
-
-
-);;
-const toast = document.createElement('ion-toast');
+</ion-card>
+</ion-reorder>`,
+  );
+  const toast = document.createElement('ion-toast');
   toast.message = 'New Step Created';
   toast.duration = 2000;
   toast.color = 'primary';
@@ -64,6 +63,9 @@ export class AppNewGuide {
               <ion-title>New Guide</ion-title>
             </ion-toolbar>
           </ion-header>
+          <ion-card>
+            <ion-card-header color="danger">THIS IS NOT A WORKING PAGE YET!!! YOU HAVE BEEN WARNED!!!</ion-card-header>
+          </ion-card>
           <ion-list>
             <ion-item>
               <ion-label position="floating">Device Name</ion-label>
@@ -115,16 +117,24 @@ export class AppNewGuide {
               <ion-card-title>Create Your Steps</ion-card-title>
             </ion-card-header>
           </ion-card>
+          
+          <ion-ion-reorder-group disabled="false">
 
-          <ion-card>
-            <ion-card-header color="primary">
-              <ion-input id="steptitle" placeholder="Title Goes Here"></ion-input>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-textarea id="stepcontent" placeholder="Step Content Goes Here"></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <div id="addhere"></div>
+            <ion-reorder>
+              <ion-card>
+                <ion-card-header color="primary">
+                  <ion-input id="steptitle" placeholder="Title Goes Here"></ion-input>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-textarea id="stepcontent" placeholder="Step Content Goes Here"></ion-textarea>
+                </ion-card-content>
+              </ion-card>
+            </ion-reorder>
+
+            <div id="addhere"></div>
+          </ion-ion-reorder-group>
+
+          
           <ion-fab vertical="bottom" horizontal="end" slot="fixed">
             <ion-fab-button>
               <ion-icon name="add"></ion-icon>
@@ -143,7 +153,9 @@ export class AppNewGuide {
           </ion-fab>
         </ion-content>
         <ion-footer>
-          <ion-button expand="full" onClick={() => submitGuide()}>Submit Guide</ion-button>
+          <ion-button expand="full" onClick={() => submitGuide()}>
+            Submit Guide
+          </ion-button>
         </ion-footer>
       </Host>
     );
