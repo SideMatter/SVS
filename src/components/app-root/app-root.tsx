@@ -20,10 +20,10 @@ export class AppRoot {
     return (
       <ion-app>
         <ion-router useHash={false}>
-          <ion-route url="/" component="app-home" />
-          <ion-route url="/guide/" component="app-guide" />
-          <ion-route url="/auth/" component="app-auth" />
-          <ion-route url="/new-guide/" component="app-new-guide" />
+          <ion-route url="/" component="app-home"/>
+          <ion-route url="/guide/" component="app-guide"/>
+          <ion-route url="/auth/" component="app-auth"/>
+          <ion-route url="/new-guide/" component="app-new-guide"/>
         </ion-router>
         <ion-nav />
       </ion-app>

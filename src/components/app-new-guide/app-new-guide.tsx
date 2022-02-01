@@ -30,7 +30,7 @@ function addSteps() {
   div.insertAdjacentHTML(
     'beforeend',
     `
-  <ion-reorder>
+
   <ion-card>
   <ion-card-header color="primary">
     <ion-input id="steptitle" placeholder="Title Goes Here"></ion-input>
@@ -39,7 +39,7 @@ function addSteps() {
     <ion-textarea id="stepcontent" placeholder="Step Content Goes Here"></ion-textarea>
     </ion-card-content>
 </ion-card>
-</ion-reorder>`,
+`,
   );
   const toast = document.createElement('ion-toast');
   toast.message = 'New Step Created';
@@ -69,15 +69,15 @@ export class AppNewGuide {
           <ion-list>
             <ion-item>
               <ion-label position="floating">Device Name</ion-label>
-              <ion-input></ion-input>
+              <ion-input placeholder="iPhone 13 Pro Max"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Title Of Guide</ion-label>
-              <ion-input></ion-input>
+              <ion-input placeholder="Skinning for dummies"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Reccomended Kit</ion-label>
-              <ion-input></ion-input>
+              <ion-input placeholder="Macbook Pro 16 inch"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label>Tools Score</ion-label>
@@ -109,7 +109,7 @@ export class AppNewGuide {
             </ion-item>
             <ion-item>
               <ion-label position="floating">Time to Complete</ion-label>
-              <ion-input></ion-input>
+              <ion-input placeholder="20 min"></ion-input>
             </ion-item>
           </ion-list>
           <ion-card>
@@ -118,9 +118,7 @@ export class AppNewGuide {
             </ion-card-header>
           </ion-card>
           
-          <ion-ion-reorder-group disabled="false">
-
-            <ion-reorder>
+        
               <ion-card>
                 <ion-card-header color="primary">
                   <ion-input id="steptitle" placeholder="Title Goes Here"></ion-input>
@@ -129,10 +127,10 @@ export class AppNewGuide {
                   <ion-textarea id="stepcontent" placeholder="Step Content Goes Here"></ion-textarea>
                 </ion-card-content>
               </ion-card>
-            </ion-reorder>
+            
 
             <div id="addhere"></div>
-          </ion-ion-reorder-group>
+    
 
           
           <ion-fab vertical="bottom" horizontal="end" slot="fixed">

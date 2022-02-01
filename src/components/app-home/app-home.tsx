@@ -94,6 +94,7 @@ export class AppHome {
   <ion-card-header>
     <ion-card-subtitle>SideMatter</ion-card-subtitle>
     <ion-card-title>Ridge Wallet</ion-card-title>
+    
   </ion-card-header>
 
   <ion-card-content>
