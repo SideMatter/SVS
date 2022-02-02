@@ -55,6 +55,16 @@ async function toastTime() {
   return toast.present();
 }
 
+async function toastUnbulit() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'Hey! Just a heads up that this feature isnt built yet. It will be soon!';
+  toast.duration = 2000;
+  toast.color = 'primary';
+
+  document.body.appendChild(toast);
+  return toast.present();
+}
+
 
 @Component({
   tag: 'app-home',
@@ -78,12 +88,12 @@ export class AppHome {
       </ion-header>,
 
       <ion-content class="ion-padding">
-        <ion-searchbar></ion-searchbar>
+        <ion-searchbar onIonChange={() => toastUnbulit()}></ion-searchbar>
         <ion-segment>
-  <ion-segment-button>
+  <ion-segment-button onClick={() => toastUnbulit()}>
     <ion-label>Certified</ion-label>
   </ion-segment-button>
-  <ion-segment-button>
+  <ion-segment-button onClick={() => toastUnbulit()}>
     <ion-label>Community</ion-label>
   </ion-segment-button>
 </ion-segment>
@@ -172,11 +182,11 @@ export class AppHome {
 <ion-card>
   <ion-card-header>
     <ion-card-subtitle>SideMatter</ion-card-subtitle>
-    <ion-card-title>A litteral child</ion-card-title>
+    <ion-card-title>A child</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-   Skining a child is very hard, as childs are not robots and have fleshy oily skin
+   Skining a child is very hard, as childs are not robots and have fleshy oily skin. Stop grammer policing a stupid mockup you dipshits.
   <br></br>
   <ion-chip color="danger" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
