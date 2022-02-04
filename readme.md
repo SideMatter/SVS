@@ -1,2 +1,2 @@
-# The Skindex
-The custom skinning guide
+# Stark Vinyl Studios
+Have you ever thought to yourself, gee I want to apply a vinyl to my {insert device name here}? Well, you've come to the right place. This is Stark Vinyl Studios, or SVS for short. We are a small, highly trained team that specializes in vinyl applications. We have a created large range of guides that are professonial crafted to ensure your gettin' the best out of your vinyl. Check us out [here](https://www.starkvinylstudios.com/).
