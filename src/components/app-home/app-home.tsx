@@ -1,4 +1,5 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
+import {Posts} from '../../interfaces';
 
 async function toastVerifed() {
   const toast = document.createElement('ion-toast');
@@ -65,6 +66,30 @@ async function toastUnbulit() {
   return toast.present();
 }
 
+const div = document.querySelector("#app"); //Selects where to throw the shit
+const url = "http://zevaryx.com:8000/api/v1/posts/"; // Where it gets the shit from
+
+// sending request
+fetch(url).then((response)=>{
+  return response.json();  // converting byte data to json
+}).then(data=>{
+
+   const {title, body} = data;
+
+   // creating h1 and p elements
+   const h1 = document.createElement('h1');
+   const p = document.createElement('p');
+
+  // adding content
+  h1.textContent = title;
+  p.textContent = body;
+
+  // appending to div element
+  div.appendChild(h1);
+  div.appendChild(p);
+})
+
+
 
 @Component({
   tag: 'app-home',
@@ -72,8 +97,21 @@ async function toastUnbulit() {
 })
 
 
+
 export class AppHome {
-  
+  @State()
+  posts : Posts = {
+    op: null,
+    device_name: null,
+    title: null,
+    content: null,
+    tools: null,
+    difficulty: null,
+    materials: null,
+    time: null,
+    kit:null,
+
+  }
   render() {
     return [
       <ion-header>
@@ -210,12 +248,16 @@ export class AppHome {
    <br></br>
 
 </ion-card>
+
+<div id="app"></div>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
 <ion-fab-button href="/new-guide">
               <ion-icon name="add"></ion-icon>
             </ion-fab-button>
             </ion-fab>
       </ion-content>,
+
+      
     ];
   }
 }
