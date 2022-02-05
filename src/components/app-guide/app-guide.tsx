@@ -128,10 +128,7 @@ export class AppGuide {
                 <hr></hr>
                 Wipe it down with a microfiber cleaning cloth, included in your dbrand order.
                <hr></hr>
-                <ion-chip>
-                <ion-icon name="shield-checkmark-outline"></ion-icon>
-                <ion-label>Verified</ion-label>
-              </ion-chip>
+               
               </ion-card-content>
             </ion-card>
 
@@ -143,6 +140,8 @@ export class AppGuide {
               <ion-card-content>
                 <br></br>
                 Place the item on the back of the 3m Paper. Draw a line, about one inch around the sides, then cut with either a pair of scisors or an xacto knife.
+                <br></br>
+               
               </ion-card-content>
             </ion-card>
             <ion-card class="guide">
