@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+
 // Use matchMedia to check the user preference
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -11,6 +12,16 @@ prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 function toggleDarkTheme(shouldAdd) {
   document.body.classList.toggle('dark', shouldAdd);
 }
+
+
+import { initializeApp } from 'firebase/app';
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  //...
+};
+
+const app = initializeApp(firebaseConfig);
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.css',
@@ -18,6 +29,8 @@ function toggleDarkTheme(shouldAdd) {
 export class AppRoot {
   render() {
     return (
+
+      
       <ion-app>
         <ion-router useHash={false}>
           <ion-route url="/" component="app-home"/>
