@@ -66,30 +66,13 @@ async function toastUnbulit() {
   return toast.present();
 }
 
-const div = document.querySelector("#app"); //Selects where to throw the shit
+
 const url = "http://zevaryx.com:8000/api/v1/posts/"; // Where it gets the shit from
 
 // sending request
-fetch(url).then((response)=>{
-  return response.json();  // converting byte data to json
-}).then(data=>{
-
-   const {title, body} = data;
-
-   // creating h1 and p elements
-   const h1 = document.createElement('h1');
-   const p = document.createElement('p');
-
-  // adding content
-  h1.textContent = title;
-  p.textContent = body;
-
-  // appending to div element
-  div.appendChild(h1);
-  div.appendChild(p);
-})
-
-
+const response = await fetch(url);
+const data = await response.json();
+console.log(data.results);
 
 @Component({
   tag: 'app-home',
@@ -116,6 +99,7 @@ export class AppHome {
     return [
       <ion-header>
         <ion-toolbar color="primary">
+          <ion-menu-button slot="start"></ion-menu-button>
         <ion-buttons slot="end">
           <ion-button href="/auth">
             <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle-outline"></ion-icon>

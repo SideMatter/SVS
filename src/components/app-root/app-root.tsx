@@ -14,14 +14,11 @@ function toggleDarkTheme(shouldAdd) {
 }
 
 
-import { initializeApp } from 'firebase/app';
+
 
 // TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-  //...
-};
 
-const app = initializeApp(firebaseConfig);
+
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.css',
@@ -37,8 +34,27 @@ export class AppRoot {
           <ion-route url="/guide/" component="app-guide"/>
           <ion-route url="/auth/" component="app-auth"/>
           <ion-route url="/new-guide/" component="app-new-guide"/>
+          <ion-route url="/devices/" component="app-devices"/>
         </ion-router>
-        <ion-nav />
+       
+        <ion-split-pane contentId="main">
+          <ion-menu contentId="main" type="overlay">
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Menu</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content>
+              <ion-list>
+                <ion-item href='/'>Guides</ion-item>
+                <ion-item href='/devices'>Devices</ion-item>
+              </ion-list>
+             
+            </ion-content>
+          </ion-menu>
+          <ion-nav id="main"></ion-nav>
+        </ion-split-pane>
+       
       </ion-app>
     );
   }
