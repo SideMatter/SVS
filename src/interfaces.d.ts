@@ -1,4 +1,3 @@
-import { DatetimeChangeEventDetail } from "@ionic/angular";
 
 interface Posts {
     op: string;
@@ -10,4 +9,14 @@ interface Posts {
     materials: number;
     time: string;
     kit:string;
+}
+
+interface Devices {
+   url:string;
+   id:string;
+   year:string;
+   make:string;
+   model:string;
+   long_name:string;
+   
 }

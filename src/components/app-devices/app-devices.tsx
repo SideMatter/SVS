@@ -1,13 +1,30 @@
-import { Component, Host, h } from '@stencil/core';
+
+import { Component, Host, h, State } from '@stencil/core';
+
+
+
+
+
+
 
 @Component({
   tag: 'app-devices',
   styleUrl: 'app-devices.css',
 })
 export class AppDevices {
+  @State()
+    devices: Devices[] = [];
+  
+    async componentDidLoad() {
+      const response = await fetch("http://zevaryx.com:8000/api/v1/devices/");
+      const data = await response.json();
+      console.log('data', data);
+      this.devices = data;
+    }
   render() {
     return (
       <Host>
+        
         <ion-header>
           <ion-toolbar color="primary">
           <ion-menu-button slot="start"></ion-menu-button>
@@ -15,29 +32,22 @@ export class AppDevices {
           </ion-toolbar>
         </ion-header>
         <ion-content>
-          <ion-item>
-            <ion-label>Legend The Dipshit</ion-label>
-            <ion-chip color="danger">
-              <ion-icon name="close-circle"></ion-icon>
-              <ion-label>No Guide Found</ion-label>
-            </ion-chip>
-          </ion-item>
-          <ion-item>
-            <ion-label>Meta Quest</ion-label>
-            <ion-chip color="warning">
-              <ion-icon name="people"></ion-icon>
-              <ion-label>Community Guides Created</ion-label>
-            </ion-chip>
-          </ion-item>
-          <ion-item>
-            <ion-label>The Ridge Wallet</ion-label>
-            <ion-chip color="success">
-              <ion-icon name="checkmark-circle"></ion-icon>
-              <ion-label>Offically Verified Guide</ion-label>
-            </ion-chip>
-          </ion-item>
+
+          {
+            !this.devices ?
+ <ion-spinner />:
+this.devices.map(device => (
+              <ion-item>
+            <ion-label>{device.long_name}</ion-label>
+            {console.log(device.long_name)}
+            
+          </ion-item>)
+            )
+
+}
+         
           <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-<ion-fab-button href="/new-device">
+<ion-fab-button>
               <ion-icon name="add"></ion-icon>
             </ion-fab-button>
             </ion-fab>

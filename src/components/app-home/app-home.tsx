@@ -1,5 +1,6 @@
+
 import { Component, h, State } from '@stencil/core';
-import {Posts} from '../../interfaces';
+// import {Posts} from '../../interfaces';
 
 async function toastVerifed() {
   const toast = document.createElement('ion-toast');
@@ -82,19 +83,16 @@ console.log(data.results);
 
 
 export class AppHome {
+  
   @State()
-  posts : Posts = {
-    op: null,
-    device_name: null,
-    title: null,
-    content: null,
-    tools: null,
-    difficulty: null,
-    materials: null,
-    time: null,
-    kit:null,
-
-  }
+  posts: Posts[] = [];
+  
+    async componentDidLoad() {
+      const response = await fetch("http://zevaryx.com:8000/api/v1/posts/");
+      const data = await response.json();
+      console.log('data', data);
+      this.posts = data;
+    }
   render() {
     return [
       <ion-header>
@@ -119,51 +117,14 @@ export class AppHome {
 
 <ion-seachbar></ion-seachbar>
 
-       <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>SideMatter</ion-card-subtitle>
-    <ion-card-title>Ridge Wallet</ion-card-title>
-    
-  </ion-card-header>
-
-  <ion-card-content>
-  <ion-chip
-  onClick={() => toastVerifed()} color="success">
-  <ion-icon name="shield-checkmark-outline"></ion-icon>
-  <ion-label>Verified</ion-label>
-</ion-chip>
-<br></br>
-   Skinning a ridge wallet is a fairly easy custom skin to complete as it's basically a metal rectangle with a small indent at the bottom.
-   <br></br>
-   <ion-chip color="success" onClick={() => toastTools()}>
- <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: Normal</ion-label>
-  </ion-chip>
-  <ion-chip color="primary" onClick={() => toastDiff()}>
- <ion-icon name="speedometer-outline"></ion-icon>
-   <ion-label>Difficulty: 1</ion-label>
-  </ion-chip>
-  <ion-chip color="primary" onClick={() => toastMat()}>
- <ion-icon name="cash-outline"></ion-icon>
-   <ion-label>Materials: 1</ion-label>
-  </ion-chip>
-  <ion-chip color="primary" onClick={() => toastTime()}>
- <ion-icon name="timer-outline"></ion-icon>
-   <ion-label>Time Required: 30 Mins</ion-label>
-  </ion-chip>
- 
-  <br></br>
-  <ion-button color="primary" href="/guide" expand="full" >View Guide</ion-button>
-  </ion-card-content>
-
-  
-
-</ion-card>
-
+{
+            !this.posts ?
+ <ion-spinner />:
+this.posts.map(posts => (
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>SideMatter</ion-card-subtitle>
-    <ion-card-title> Key fob</ion-card-title>
+    {/* <ion-card-subtitle>{posts.op}</ion-card-subtitle> */}
+    <ion-card-title>{posts.device_name}</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
@@ -173,23 +134,23 @@ export class AppHome {
   <ion-label>Certified</ion-label>
 </ion-chip>
 <br></br>
-   Skinning a key fob is a bit harder
+   {posts.content}
    <br></br>
    <ion-chip color="warning" onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: Optional</ion-label>
+   <ion-label>Tools: {posts.tools}</ion-label>
   </ion-chip>
   <ion-chip color="primary" onClick={() => toastDiff()}>
  <ion-icon name="speedometer-outline"></ion-icon>
-   <ion-label>Difficulty: 2</ion-label>
+   <ion-label>Difficulty: {posts.difficulty}</ion-label>
   </ion-chip>
   <ion-chip color="primary" onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
-   <ion-label>Materials: 1</ion-label>
+   <ion-label>Materials: {posts.materials}</ion-label>
   </ion-chip>
   <ion-chip color="primary" onClick={() => toastTime()}>
  <ion-icon name="timer-outline"></ion-icon>
-   <ion-label>Time Required: 30 Mins</ion-label>
+   <ion-label>Time Required: {posts.time}</ion-label>
   </ion-chip>
   <br></br>
   <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
@@ -197,38 +158,10 @@ export class AppHome {
   
 </ion-card>
 
+              )
+            )
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>SideMatter</ion-card-subtitle>
-    <ion-card-title>A child</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-   Skining a child is very hard, as childs are not robots and have fleshy oily skin. Stop grammer policing a stupid mockup you dipshits.
-  <br></br>
-  <ion-chip color="danger" onClick={() => toastTools()}>
- <ion-icon name="hammer-outline"></ion-icon>
-   <ion-label>Tools: Additional</ion-label>
-  </ion-chip>
-  <ion-chip color="danger" onClick={() => toastDiff()}>
- <ion-icon name="speedometer-outline"></ion-icon>
-   <ion-label>Difficulty: 5</ion-label>
-  </ion-chip>
-  <ion-chip color="danger" onClick={() => toastMat()}>
- <ion-icon name="cash-outline"></ion-icon>
-   <ion-label>Materials: 5+</ion-label>
-
-  </ion-chip>
-  <ion-chip color="danger" onClick={() => toastTime()}>
- <ion-icon name="timer-outline"></ion-icon>
-   <ion-label>Time Required: Good freaking luck</ion-label>
-  </ion-chip>
-  <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
-  </ion-card-content>
-   <br></br>
-
-</ion-card>
+}
 
 <div id="app"></div>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
