@@ -61,7 +61,7 @@ async function toastUnbulit() {
 }
 
 
-const url = "http://zevaryx.com:8000/api/v1/posts/"; // Where it gets the shit from
+const url = "http://sdapi.zevaryx.com/api/v1/posts/"; // Where it gets the shit from
 
 // sending request
 const response = await fetch(url);

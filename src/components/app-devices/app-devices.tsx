@@ -16,7 +16,7 @@ export class AppDevices {
     devices: Devices[] = [];
   
     async componentDidLoad() {
-      const response = await fetch("http://zevaryx.com:8000/api/v1/devices/");
+      const response = await fetch("http://sdapi.zevaryx.com/api/v1/devices/");
       const data = await response.json();
       console.log('data', data);
       this.devices = data;
