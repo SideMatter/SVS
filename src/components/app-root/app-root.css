@@ -153,4 +153,8 @@ body.dark {
     --ion-card-background: #1e1e1e;
   }
 
-  
+ion-thumbnail {
+    width: 25%;
+    height: 25%;
+   
+}

@@ -100,11 +100,8 @@ export class AppHome {
       <ion-header>
         <ion-toolbar color="primary">
           <ion-menu-button slot="start"></ion-menu-button>
-        <ion-buttons slot="end">
-          <ion-button href="/auth">
-            <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
+
+       
           <ion-title>Home</ion-title>
         </ion-toolbar>
       </ion-header>,

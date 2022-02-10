@@ -16,7 +16,7 @@ export class AppDevices {
         </ion-header>
         <ion-content>
           <ion-item>
-            <ion-label>iPhone 13 Pro Max</ion-label>
+            <ion-label>Legend The Dipshit</ion-label>
             <ion-chip color="danger">
               <ion-icon name="close-circle"></ion-icon>
               <ion-label>No Guide Found</ion-label>

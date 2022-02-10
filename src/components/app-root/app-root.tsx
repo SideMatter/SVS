@@ -38,19 +38,29 @@ export class AppRoot {
         </ion-router>
        
         <ion-split-pane contentId="main">
-          <ion-menu contentId="main" type="overlay">
+          <ion-menu contentId="main" type="overlay" color="primary">
             <ion-header>
+            
               <ion-toolbar>
+              <ion-thumbnail slot="start">
+  <img src="https://cdn.discordapp.com/attachments/833432914863194152/940359942861389844/unknown.png"></img>
+</ion-thumbnail>
                 <ion-title>Menu</ion-title>
               </ion-toolbar>
             </ion-header>
             <ion-content>
               <ion-list>
-                <ion-item href='/'>Guides</ion-item>
-                <ion-item href='/devices'>Devices</ion-item>
+                <ion-item href='/'>
+                <ion-icon name="list" slot="start"></ion-icon>Guides</ion-item>
+                <ion-item href='/devices'>
+                <ion-icon name="phone-portrait" slot="start"></ion-icon>Devices</ion-item>
               </ion-list>
-             
             </ion-content>
+            <ion-footer>
+               <ion-item href="/auth">
+               <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+                 SideMatter</ion-item>
+             </ion-footer>
           </ion-menu>
           <ion-nav id="main"></ion-nav>
         </ion-split-pane>
