@@ -129,15 +129,37 @@ this.posts.map(posts => (
 <br></br>
    {posts.content}
    <br></br>
-   <ion-chip color="warning" onClick={() => toastTools()}>
+   <ion-chip
+   color={posts.tools = 1
+   ? "primary"
+   : posts.tools = 2
+       ? "primary"
+       : posts.tools = 3
+       ? "warning"
+       : posts.tools = 4
+       ? "warning"
+       : "danger"}
+   
+   
+   
+   onClick={() => toastTools()}>
  <ion-icon name="hammer-outline"></ion-icon>
    <ion-label>Tools: {posts.tools}</ion-label>
   </ion-chip>
-  <ion-chip color="primary" onClick={() => toastDiff()}>
+  <ion-chip color={posts.tools == 'normal' ? "primary" : posts.tools == 'additional' ? "danger" : posts.tools == 'optional' ? "warning" : "primary"} onClick={() => toastDiff()}>
+
  <ion-icon name="speedometer-outline"></ion-icon>
    <ion-label>Difficulty: {posts.difficulty}</ion-label>
   </ion-chip>
-  <ion-chip color="primary" onClick={() => toastMat()}>
+  <ion-chip color={posts.tools = 1
+   ? "primary"
+   : posts.tools = 2
+       ? "primary"
+       : posts.tools = 3
+       ? "warning"
+       : posts.tools = 4
+       ? "warning"
+       : "danger"} onClick={() => toastMat()}>
  <ion-icon name="cash-outline"></ion-icon>
    <ion-label>Materials: {posts.materials}</ion-label>
   </ion-chip>

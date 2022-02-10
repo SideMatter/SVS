@@ -59,7 +59,7 @@ export class AppRoot {
             <ion-footer>
                <ion-item href="/auth">
                <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-                 SideMatter</ion-item>
+                 Account</ion-item>
              </ion-footer>
           </ion-menu>
           <ion-nav id="main"></ion-nav>

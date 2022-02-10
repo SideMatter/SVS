@@ -1,7 +1,15 @@
 
 import { Component, Host, h, State } from '@stencil/core';
 
+async function toastUnbulit() {
+  const toast = document.createElement('ion-toast');
+  toast.message = 'Hey! Just a heads up that this feature isnt built yet. It will be soon!';
+  toast.duration = 2000;
+  toast.color = 'primary';
 
+  document.body.appendChild(toast);
+  return toast.present();
+}
 
 
 
@@ -47,7 +55,7 @@ this.devices.map(device => (
 }
          
           <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-<ion-fab-button>
+<ion-fab-button color="danger">
               <ion-icon name="add"></ion-icon>
             </ion-fab-button>
             </ion-fab>
