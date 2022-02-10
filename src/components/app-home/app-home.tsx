@@ -11,15 +11,8 @@ async function toastVerifed() {
   document.body.appendChild(toast);
   return toast.present();
 }
-async function toastCert() {
-  const toast = document.createElement('ion-toast');
-  toast.message = 'This guide is the reccomended way to skin this device at this time';
-  toast.duration = 4000;
-  toast.color = 'warning';
 
-  document.body.appendChild(toast);
-  return toast.present();
-}
+
 async function toastTools() {
   const toast = document.createElement('ion-toast');
   toast.message = 'The amount of tools required to skin this device successfully';
@@ -129,7 +122,7 @@ this.posts.map(posts => (
 
   <ion-card-content>
   <ion-chip
-  onClick={() => toastCert()} color="warning">
+  onClick={() => toastVerifed()} color="success">
   <ion-icon name="shield-checkmark-outline"></ion-icon>
   <ion-label>Certified</ion-label>
 </ion-chip>
