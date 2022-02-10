@@ -81,7 +81,7 @@ export class AppHome {
   posts: Posts[] = [];
   
     async componentDidLoad() {
-      const response = await fetch("http://zevaryx.com:8000/api/v1/posts/");
+      const response = await fetch("https://sdapi.zevaryx.com/api/v1/posts/");
       const data = await response.json();
       console.log('data', data);
       this.posts = data;
