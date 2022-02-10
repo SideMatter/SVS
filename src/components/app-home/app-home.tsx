@@ -2,6 +2,8 @@
 import { Component, h, State } from '@stencil/core';
 // import {Posts} from '../../interfaces';
 
+const API_ROOT = "https://sdapi.zevaryx.com/api/v1";
+
 async function toastVerifed() {
   const toast = document.createElement('ion-toast');
   toast.message = 'This guide is the recommended way to skin this device and has been created by Tony Stark himself';
@@ -60,14 +62,6 @@ async function toastUnbulit() {
   return toast.present();
 }
 
-
-const url = "https://sdapi.zevaryx.com/api/v1/posts/"; // Where it gets the shit from
-
-// sending request
-const response = await fetch(url);
-const data = await response.json();
-console.log(data.results);
-
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
@@ -76,15 +70,27 @@ console.log(data.results);
 
 
 export class AppHome {
-  
+
   @State()
   posts: Posts[] = [];
-  
+  devices: Devices[] = [];
+  deviceLookup: Object[] = [];
+
     async componentDidLoad() {
-      const response = await fetch("https://sdapi.zevaryx.com/api/v1/posts/");
-      const data = await response.json();
-      console.log('data', data);
-      this.posts = data;
+        const device_resp = await fetch(API_ROOT + "/devices/");
+        const device_data = await device_resp.json();
+        console.log('devices', device_data);
+        this.devices = device_data;
+
+        const posts_resp = await fetch(API_ROOT + "/posts/");
+        const post_data = await posts_resp.json();
+        console.log('posts', post_data);
+        this.posts = post_data;
+
+        for (let key in this.devices) {
+            const device = this.devices[key];
+            this.deviceLookup[device.id] = device.long_name;
+        }
     }
   render() {
     return [
@@ -92,7 +98,7 @@ export class AppHome {
         <ion-toolbar color="primary">
           <ion-menu-button slot="start"></ion-menu-button>
 
-       
+
           <ion-title>Home</ion-title>
         </ion-toolbar>
       </ion-header>,
@@ -117,7 +123,7 @@ this.posts.map(posts => (
 <ion-card>
   <ion-card-header>
     {/* <ion-card-subtitle>{posts.op}</ion-card-subtitle> */}
-    <ion-card-title>{posts.device_name}</ion-card-title>
+    <ion-card-title>{this.deviceLookup[posts.device_name] ?? "Device not found"}</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
@@ -148,7 +154,7 @@ this.posts.map(posts => (
   <br></br>
   <ion-button color="danger" href="/guide" expand="full" disabled={true}>Guide Coming Soon</ion-button>
   </ion-card-content>
-  
+
 </ion-card>
 
               )
@@ -164,7 +170,7 @@ this.posts.map(posts => (
             </ion-fab>
       </ion-content>,
 
-      
+
     ];
   }
 }
