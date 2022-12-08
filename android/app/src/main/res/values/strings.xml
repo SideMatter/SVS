@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">skindex</string>
-    <string name="title_activity_main">skindex</string>
-    <string name="package_name">com.skindex.app</string>
-    <string name="custom_url_scheme">com.skindex.app</string>
-</resources>
